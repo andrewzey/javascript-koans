@@ -109,15 +109,37 @@ describe("About Applying What We Have Learnt", function() {
   var FILL_ME_IN_TOO = null;
 
   it("should find the largest prime factor of a composite number", function () {
+    
+    var largestPrimeFactorOfComposite = function(compositeNum) {
+
+      var isPrime = function(num) {
+        for (var i = 2; i < num; i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      for (var i = compositeNum; i > 1; i--) {
+        if (compositeNum % i === 0 && isPrime(i)) {
+          return i;
+        }
+      }
+
+    };
   
-    expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
+    expect(largestPrimeFactorOfComposite(25)).toBe(5);
   });
 
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+
     expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
   });
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () { 
+  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+
+
     expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
   });
 
@@ -129,6 +151,7 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the 10001st prime", function () {
+
     expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
   });
   
