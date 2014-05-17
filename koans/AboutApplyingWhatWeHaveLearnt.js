@@ -152,7 +152,32 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should find the 10001st prime", function () {
 
-    expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
+    var findNthPrime = function(nthPrime) {
+      
+      var isPrime = function(num) {
+        for (var i = 2; i < num; i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      var primeCounter = 1; 
+      var loopCounter = 2; //the number 2 is the first prime
+
+      while (primeCounter < nthPrime) {
+        loopCounter++;
+
+        if (isPrime(loopCounter)) {
+          primeCounter++;
+        }
+      }
+
+      return loopCounter;
+    };
+
+    expect(findNthPrime(10001)).toBe(104743);
   });
   
 });
