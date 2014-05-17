@@ -133,6 +133,22 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
+    //is palindrome function
+
+    //function that descends from highest product down to first palindrome, then returns it
+      //999 * 999   998001
+      //998 * 999   997002
+      //998 * 998   996004
+      //997 * 999   996003
+      //997 * 998   995006
+      //997 * 997   994009
+
+      //outer loop starts at 999
+        // inner loop starts at 999 and descends down to outer loop counter
+          // checks product to see if its a palindrome, and returns it (first, largest palindrome)
+        // IMPLIED: outer loop counter descends once inner loop counter === outer loop counter
+
+
 
     expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
   });
