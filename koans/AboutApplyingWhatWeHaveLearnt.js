@@ -134,23 +134,34 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
     //is palindrome function
+    var isPalindrome = function(num) {
+      var string = num.toString();
 
-    //function that descends from highest product down to first palindrome, then returns it
-      //999 * 999   998001
-      //998 * 999   997002
-      //998 * 998   996004
-      //997 * 999   996003
-      //997 * 998   995006
-      //997 * 997   994009
+      for (var i=0; i<string.length; i++) {
+        if (string[i] !== string[string.length - i - 1]) {
+          return false;
+        }
+      }
+      return true;
+    };
 
-      //outer loop starts at 999
-        // inner loop starts at 999 and descends down to outer loop counter
-          // checks product to see if its a palindrome, and returns it (first, largest palindrome)
-        // IMPLIED: outer loop counter descends once inner loop counter === outer loop counter
+    var largestPalindromeFromTwo3DigitFactors = function(){
+      var max = 0;
+
+      for (var i = 100; i < 1000; i++) {
+        for (var j = i; j < 1000; j++) {
+          var product = i * j;
+          if (isPalindrome(product) && product > max) {
+            max = product;
+          }
+        }
+      }
+
+      return max;
+    }
 
 
-
-    expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
+    expect(largestPalindromeFromTwo3DigitFactors()).toBe(906609);
   });
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
