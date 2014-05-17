@@ -166,8 +166,32 @@ describe("About Applying What We Have Learnt", function() {
 
   it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
+    var smallestNumberDivisibleByAllTo = function(num) {
 
-    expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
+      //count up from 20 until found a number that satisfies criteria
+
+      var counter = num;
+      var divides;
+
+      while(true) { //while(true) because we don't know when the loop will end beforehand
+        divides = true;
+
+        for (var i = 1; i <= num; i++) {
+          if (counter % i !== 0) {
+            divides = false;
+            break; // no need to check following numbers in fails to divide
+          }
+        }
+
+        if (divides) {
+          return counter;
+        } else {
+          counter++;
+        }
+      }
+    };
+    
+    expect(smallestNumberDivisibleByAllTo(20)).toBe(232792560);
   });
 
   it("should find the difference between the sum of the squares and the square of the sums", function () {
