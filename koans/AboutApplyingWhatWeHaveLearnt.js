@@ -122,7 +122,10 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the difference between the sum of the squares and the square of the sums", function () {
-    expect(FILL_ME_IN).toBe(FILL_ME_IN_TOO);
+    var sumOfSquaresVsSquareOfSums = function(num1, num2) {
+      return Math.abs((num1*num1 + num2*num2) - (num1+num2)*(num1+num2));
+    }
+    expect(sumOfSquaresVsSquareOfSums(3, 4)).toBe(24);
   });
 
   it("should find the 10001st prime", function () {
